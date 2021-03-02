@@ -1,0 +1,29 @@
+#include <cs50.h>
+#include <stdio.h>
+
+const int TOTAL = 3;
+
+float average();
+
+int main(void)
+{
+    int scores[TOTAL];
+    for (int i = 0; i < TOTAL; i++)
+    {
+      scores[i] = get_int("Score: ");
+    }
+
+    // Print average
+    printf("Average: %f\n", average(TOTAL, scores));
+}
+
+// find average function
+float average(int length, int array[])
+{
+    int sum = 0;
+    for (int i = 0; i < length; i++)
+    {
+        sum += array[i];
+    }
+    return sum / (float) length;
+}
